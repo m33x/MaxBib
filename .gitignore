@@ -1,3 +1,7 @@
+## Own papers
+own.bib
+*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

@@ -4,7 +4,7 @@
 '''
 :author: Maximilian Golla
 :contact: maximilian.golla@rub.de
-:version: 0.0.1, 2019-03-30
+:version: 0.0.2, 2021-02-07
 :description: Checks bibfile for common errors
 '''
 
@@ -69,13 +69,48 @@ def get_entries(kind, bib):
     for entry in once:
         print("{} -- {}".format(1, entry))
 
-def get_spacing(bib):
+def get_bibitem(bib, item_type):
+    results = []
+    item = ''
     for line in bib:
+        item += line + '\n'
+        if line.startswith(item_type):
+            item = line + '\n'
+        if line.startswith('}'):
+            results.append([item])
+            item = ''
+    return results
+
+def get_allitems(bib):
+    no_of_entries = 0
+    allitems = []
+    allitems += get_bibitem(bib, '@')
+    for bibitem in allitems:
+        no_of_entries += 1
+    print("Found {} entries in the provided bib file.".format(no_of_entries))
+    return allitems
+
+def find_sorting_error(bibitems):
+    entries = 0
+    for item in bibitems:
+        for line in item:
+            firstline = line.split('\n')[0]
+            break
+        currentline = firstline.replace('@inproceedings{', '').replace('@article{', '').replace('@misc{', '').replace('@book{', '').replace('@techreport{', '').replace('@phdthesis{', '').replace('@incollection{', '').replace('@inbook{', '')
+        entries += 1
+        print("{}\t{}".format(entries, currentline))
+
+def get_spacing(bib):
+    entries = 0
+    counter = 0
+    for line in bib:
+        counter += 1
         if '    ' not in line:
             if '%' not in line:
                 if '@' not in line:
                     if '}' not in line:
-                        print(line)
+                        entries += 1
+                        print(entries, counter, line)
 
 def main():
     bib = readfile('max.bib')
@@ -84,8 +119,10 @@ def main():
     check_equal_signs(bib)
     check_double_space(bib)
     #check_author_names(bib)
-    get_entries('publisher', bib)
+    #get_entries('publisher', bib)
     #get_spacing(bib)
+    allitems = get_allitems(bib)
+    #find_sorting_error(allitems)
 
 if __name__ == '__main__':
     main()

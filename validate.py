@@ -91,6 +91,7 @@ def get_allitems(bib):
     return allitems
 
 def find_sorting_error(bibitems):
+    before = []
     entries = 0
     for item in bibitems:
         for line in item:
@@ -98,7 +99,14 @@ def find_sorting_error(bibitems):
             break
         currentline = firstline.replace('@inproceedings{', '').replace('@article{', '').replace('@misc{', '').replace('@book{', '').replace('@techreport{', '').replace('@phdthesis{', '').replace('@incollection{', '').replace('@inbook{', '')
         entries += 1
-        print("{}\t{}".format(entries, currentline))
+        before.append(currentline)
+        #print("{}\t{}".format(entries, currentline))
+    print("###########\n\n\n")
+    after = sorted(before)
+    for k, v in enumerate(after):
+        if after[k].split('-')[0] != before[k].split('-')[0]:
+            print("Check", k, after[k], before[k])
+
 
 def get_spacing(bib):
     entries = 0
@@ -118,10 +126,10 @@ def main():
     check_title(bib)
     check_equal_signs(bib)
     check_double_space(bib)
-    #check_author_names(bib)
+    check_author_names(bib)
     #get_entries('publisher', bib)
     #get_spacing(bib)
-    allitems = get_allitems(bib)
+    #allitems = get_allitems(bib)
     #find_sorting_error(allitems)
 
 if __name__ == '__main__':

@@ -122,15 +122,15 @@ def get_spacing(bib):
 
 def main():
     bib = readfile('max.bib')
-    check_pages(bib)
-    check_title(bib)
-    check_equal_signs(bib)
-    check_double_space(bib)
-    check_author_names(bib)
+    #check_pages(bib)
+    #check_title(bib)
+    #check_equal_signs(bib)
+    #check_double_space(bib)
+    #check_author_names(bib)
     #get_entries('publisher', bib)
     #get_spacing(bib)
-    #allitems = get_allitems(bib)
-    #find_sorting_error(allitems)
+    allitems = get_allitems(bib)
+    find_sorting_error(allitems)
 
 if __name__ == '__main__':
     main()

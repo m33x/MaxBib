@@ -1,0 +1,52 @@
+ArXiv/SOUPS - Challenges with Passwordless FIDO2 in an Enterprise Setting: A Usability Study
+NDSS 24 - A Security and Usability Analysis of Local Attacks Against FIDO2
+	- malicious browser extension
+CCS 23 - Evaluating the Security Posture of Real-World FIDO2 Deployments
+	- presence of malware
+	- malicious browser extension
+	- Tranco Top 1K websites
+SSYM 23 - Fast IDentity Online with Anonymous Credentials (FIDO-AC)
+	- eID
+SP 23 - Token meets Wallet: Formalizing Privacy and Revocation for FIDO2
+	- Crypto
+SP 23 - FIDO2, CTAP 2.1, and WebAuthn 2: Provable Security and Post-Quantum Instantiation
+	- Crypto
+ARES 23 - Rogue key and impersonation attacks on FIDO2: From theory to practice
+	- Crypto
+CHI 23 - FIDO2 the Rescue? Platform vs. Roaming Authentication on Smartphones
+PETS 22 - How Not to Handle Keys: Timing Attacks on FIDO Authenticator Privacy
+CCS 22 - FeIDo: Recoverable FIDO2 Tokens Using Electronic IDs
+	- eID
+ePrint 22 - Avoiding Lock Outs: Proactive FIDO Account Recovery using Managerless Group Signatures
+	- Crypto
+Trustcom 21 - FIDOnuous: A FIDO2/WebAuthn Extension to Support Continuous Web Authentication
+
+FIDO2 With Two Displays—Or How to Protect Security-Critical Web Transactions Against Malware Attacks
+
+Maryland 22 - Exploration of the Security and Usability of the FIDO2 Authentication Protocol
+
+
+Seit März 2022 ist vor allem der Leipziger Hersteller Senec wiederholt wegen Bränden seiner Photovoltaik-Heimspeicher in die Schlagzeilen gelangt
+Allerdings erklärte er, dass es sich weder um ein Batteriespeicher von LG oder Senec handele, sondern um einen Speicher mit LiFePo4-Zellchemie
+
+UNDERSTANDING PASSKEYS
+https://michal.sapka.me/2023/passkeys/
+
+How Hype Will Turn Your Security Key Into Junk
+https://fy.blackhats.net.au/blog/2023-02-02-how-hype-will-turn-your-security-key-into-junk/
+
+The good, the bad and the ugly of Apple Passkeys
+https://www.slashid.dev/blog/passkeys-deepdive/
+Passkeys - Threat modeling and implementation considerations
+https://www.slashid.dev/blog/passkeys-security-implementation/#security-and-threat-modeling
+
+Meet passkeys
+https://developer.apple.com/videos/play/wwdc2022/10092/
+
+
+https://hachyderm.io/@rmondello/111122961961973718
+
+https://www.youtube.com/watch?v=QbM4qbBQnlY&t=28135s
+
+Measuring Adoption of Phishing-Resistant Authentication Methods on the Web
+https://hdms.bsz-bw.de/frontdoor/deliver/index/docId/7038/file/thesis.pdf

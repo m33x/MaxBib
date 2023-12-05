@@ -107,7 +107,6 @@ def find_sorting_error(bibitems):
         if after[k].split('-')[0] != before[k].split('-')[0]:
             print("Check", k, after[k], before[k])
 
-
 def get_spacing(bib):
     entries = 0
     counter = 0
@@ -120,18 +119,28 @@ def get_spacing(bib):
                         entries += 1
                         print(entries, counter, line)
 
+def check_brokes_series(bib):
+    allitems = []
+    allitems += get_bibitem(bib, '@inproceedings')
+    for item in allitems:
+        if '@inproceedings' in str(item):
+            if 'series' not in str(item):
+                print(item)
+                print()
+
 def main():
     bib = readfile('max.bib')
-    check_pages(bib)
-    check_title(bib)
-    check_equal_signs(bib)
-    check_double_space(bib)
+    #check_pages(bib)
+    #check_title(bib)
+    #check_equal_signs(bib)
+    #check_double_space(bib)
     #check_author_names(bib)
     #get_entries('publisher', bib)
-    get_entries('series', bib)
+    #get_entries('series', bib)
     #get_spacing(bib)
-    allitems = get_allitems(bib)
-    find_sorting_error(allitems)
+    #allitems = get_allitems(bib)
+    #find_sorting_error(allitems)
+    check_brokes_series(bib)
 
 if __name__ == '__main__':
     main()

@@ -7,6 +7,8 @@
 :version: 0.0.1, 2022-03-02
 :description: Helper script to identify interesting papers missing in the bib
 '''
+import sys
+
 def readfile(filename):
     result = []
     with open(filename, 'r') as inputfile:
@@ -28,7 +30,9 @@ def convert_to_bibentries(maxbib_items):
                     content = line.split('=', 1)[1].strip()
                     entry[label] = content
                 except:
+                    print(entry)
                     print(f"Broken Bibtex Entry: {line}")
+                    sys.exit(-1)
         entries[item] = entry
     return entries
 
